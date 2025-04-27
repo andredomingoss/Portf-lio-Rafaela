@@ -151,3 +151,32 @@ document.querySelector('.hamburger').addEventListener('click', function() {
   this.classList.toggle('active');
   document.querySelector('.nav-links').classList.toggle('active');
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Animação do ícone hamburguer para X
+    const divs = this.querySelectorAll('div');
+    if(navLinks.classList.contains('active')) {
+      divs[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+      divs[1].style.opacity = '0';
+      divs[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+    } else {
+      divs[0].style.transform = 'none';
+      divs[1].style.opacity = '1';
+      divs[2].style.transform = 'none';
+    }
+  });
+  
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+});
