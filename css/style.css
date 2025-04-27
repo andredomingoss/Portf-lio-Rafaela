@@ -1261,3 +1261,162 @@
       grid-template-columns: 1fr;
     }
   }
+/* ADICIONE ESTE CSS PARA CORRIGIR A RESPONSIVIDADE EM CELULARES */
+
+@media (max-width: 767px) {
+  /* Ajustes gerais */
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  /* Header mobile */
+  .header-container {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Hero section */
+  #hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Sobre mim */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-img {
+    text-align: center;
+  }
+
+  .profile-img {
+    position: relative;
+    left: auto;
+    max-width: 250px;
+    margin: 0 auto 20px;
+  }
+
+  .education-badge {
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Especializações */
+  .specialization-buttons {
+    flex-direction: column;
+  }
+
+  .spec-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .specialization-content ul {
+    columns: 1;
+  }
+
+  /* Experiência */
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-date {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Contato */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    margin-bottom: 15px;
+  }
+
+  /* Footer */
+  .footer-content {
+    padding: 0 15px;
+  }
+
+  .footer-social {
+    margin: 20px 0;
+  }
+}
+
+/* Correções específicas para celulares pequenos (até 360px) */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-img {
+    max-width: 200px;
+  }
+}
